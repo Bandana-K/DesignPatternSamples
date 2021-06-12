@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;Adapter&apos; to &apos;AdapterPattern&apos;&#x0A;- Original project: &apos;StructuralPatterns&apos;&#x0A;- Original element: &apos;StructuralPatterns/src/Adapter&apos;&#x0A;- Renamed element: &apos;StructuralPatterns/src/AdapterPattern&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;Adapter&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;Adapter" name="AdapterPattern" qualified="false" references="true" stamp="1623493807389" textual="false" version="1.0"/>
+</session>
