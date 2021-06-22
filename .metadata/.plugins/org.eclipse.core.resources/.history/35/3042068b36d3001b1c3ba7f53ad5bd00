@@ -1,0 +1,55 @@
+package SingletonPattern;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+import java.lang.reflect.Constructor;
+
+//https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples
+public class DriverClass {
+
+    public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+    	
+    	
+    	//test for reflection break
+    	
+        EagerInitializedSingleton instanceOne = EagerInitializedSingleton.getInstance();
+        EagerInitializedSingleton instanceTwo = null;
+        try {
+            Constructor[] constructors = EagerInitializedSingleton.class.getDeclaredConstructors();
+            for (Constructor constructor : constructors) {
+                //Below code will destroy the singleton pattern
+                constructor.setAccessible(true);
+                instanceTwo = (EagerInitializedSingleton) constructor.newInstance();
+                break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(instanceOne.hashCode());
+        System.out.println(instanceTwo.hashCode());
+    	
+    		
+    	//Test for serialization and deserialization
+    	BillPughSingleton instanceOne = BillPughSingleton.getInstance();
+    	
+        ObjectOutput out = new ObjectOutputStream(new FileOutputStream("filename.ser"));
+        out.writeObject(instanceOne);
+        out.close();
+        
+        //deserailize from file to object
+        ObjectInput in = new ObjectInputStream(new FileInputStream("filename.ser"));
+        BillPughSingleton instanceTwo = (BillPughSingleton) in.readObject();
+        in.close();
+        
+        System.out.println("instanceOne hashCode="+instanceOne.hashCode());
+        System.out.println("instanceTwo hashCode="+instanceTwo.hashCode());
+        
+    }
+    
+}

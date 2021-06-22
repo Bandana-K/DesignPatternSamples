@@ -1,0 +1,34 @@
+package ObserverPattern;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Store implements Subject {
+    private List<Observer> customers = new ArrayList<>();
+
+    @Override
+    public void addSubscriber(Observer customer) {
+    }
+    @Override
+    public void removeSubscriber(Observer customer) {
+    }
+    @Override
+    public void notifySubscribers() {
+
+    }
+	@Override
+	public void registerObserver(Observer observer) {
+        customers.add(customer);		
+	}
+	@Override
+	public void removeObserver(Observer observer) {
+        customers.remove(customer);		
+	}
+	@Override
+	public void notifyObservers() {
+        System.out.println("A new item is on sale! Act fast before it sells out!");
+        for(Observer customer: customers) {
+            customer.update("Sale!");
+        }		
+	}
+}

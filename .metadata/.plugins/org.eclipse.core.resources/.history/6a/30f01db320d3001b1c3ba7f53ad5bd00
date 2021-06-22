@@ -1,0 +1,9 @@
+package ObserverPattern;
+
+class Internet implements Observer {
+	
+    @Override
+    public void update(float interest) {
+    	System.out.println("Internet : Interest rate has been update, new value : " + interest);    	
+    }
+}

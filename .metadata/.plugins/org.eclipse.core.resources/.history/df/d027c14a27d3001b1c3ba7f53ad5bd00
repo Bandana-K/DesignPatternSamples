@@ -1,0 +1,12 @@
+package ObserverPattern;
+
+public class DriverClass {
+
+	Store fashionStore = new Store();   
+	
+    Observer customer1 = new PassiveCustomer("Prakash");
+    Observer customer2 = new ShopaholicCustomer("Bandana");
+    Observer customer3 = new ShopaholicCustomer("Pooja");
+    
+    
+}
