@@ -1,0 +1,12 @@
+package BuilderPattern;
+
+public class DriverClass {
+
+    public static void main(String args[]) {
+        
+        //Creating object using Builder pattern in java
+        Cake whiteCake = new Cake.Builder().build();
+
+        System.out.println(" Cake is ready to eat : " +  whiteCake);
+    }
+}
