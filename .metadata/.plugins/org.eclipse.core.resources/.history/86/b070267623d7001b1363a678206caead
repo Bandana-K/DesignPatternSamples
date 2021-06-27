@@ -1,0 +1,14 @@
+package ChainOfResponsibilityPattern;
+
+import java.util.Objects;
+
+public abstract class Validate {
+	
+	private Validate nextValidator;
+	
+
+
+	public abstract void validate(Message message);
+
+
+}

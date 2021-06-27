@@ -1,0 +1,7 @@
+package ChainOfResponsibilityPattern;
+
+public class ValidatorHelper {
+	
+	private Validator cvalidator = new CategoryValidator();
+
+}

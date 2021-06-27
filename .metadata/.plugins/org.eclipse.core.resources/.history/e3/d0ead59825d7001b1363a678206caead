@@ -1,0 +1,20 @@
+package ChainOfResponsibilityPattern;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class MerchantValidator extends Validator{
+
+	String[] deniedMerchantCodes = {"D", "E"};
+	private List<String> deniedMerchantCodesList = Arrays.asList(deniedMerchantCodes);
+	
+	@Override
+	public void validate(Message message) {
+		
+		if(deniedMerchantCodesList.contains(message.getCategory()))
+			System.out.println("The Message category is filtered");
+		else 
+			System.out.println("The Message category is good to go ahead");
+	}
+
+}

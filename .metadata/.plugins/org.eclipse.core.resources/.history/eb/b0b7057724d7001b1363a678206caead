@@ -1,0 +1,16 @@
+package ChainOfResponsibilityPattern;
+
+import java.util.List;
+
+public class CategoryValidator extends Validator{
+	
+	@Value("${deniedCategories}")
+	List<String> deniedCategories;
+
+	@Override
+	public void validate(Message message) {
+		
+		
+	}
+
+}

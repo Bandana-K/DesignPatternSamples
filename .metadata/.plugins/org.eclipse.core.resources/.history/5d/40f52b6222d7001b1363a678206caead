@@ -1,0 +1,9 @@
+package ChainOfResponsibilityPattern;
+
+public abstract class Validate {
+	
+	public void validate(Message message) {
+		
+	}
+
+}

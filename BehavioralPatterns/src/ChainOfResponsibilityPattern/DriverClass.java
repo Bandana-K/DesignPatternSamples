@@ -1,10 +1,18 @@
 package ChainOfResponsibilityPattern;
 
+
 public class DriverClass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		Message message = new Message("A", null);
+		Message.Merchant merchant = message.new Merchant("ABC", "ABC");
+		message.setMerchant(merchant);
+		
+		System.out.println(message);
+
+		new ValidatorHelper().getChainOfValidators().processValidation(message);
+		
 	}
 
 }

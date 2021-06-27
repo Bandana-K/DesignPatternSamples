@@ -1,0 +1,12 @@
+package ChainOfResponsibilityPattern;
+
+import ChainOfResponsibilityPattern.Message.Merchant;
+
+public class DriverClass {
+
+	public static void main(String[] args) {
+
+		Message.Merchant merchant = new Message(null, null).new Merchant("ABC", "ABC");
+	}
+
+}

@@ -1,0 +1,17 @@
+package ChainOfResponsibilityPattern;
+
+public class Message {
+	
+	String category;
+	
+	Merchant merchant;
+	
+	class Merchant{
+		
+		String merchantName;
+		
+		String merchantCode;
+	}
+
+}
+

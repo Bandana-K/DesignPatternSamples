@@ -1,0 +1,52 @@
+package ChainOfResponsibilityPattern;
+
+public class Message {
+	
+	String category;
+	Merchant merchant;
+	
+	Message(String category, Merchant merchant){
+		this.category = category;
+		this.merchant = new Merchant(merchant.merchantName, merchant.merchantCode);		
+	}
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public Merchant getMerchant() {
+		return merchant;
+	}
+
+	public void setMerchant(Merchant merchant) {
+		this.merchant = merchant;
+	}
+	
+	class Merchant{
+		
+		String merchantName;
+		String merchantCode;
+		
+		Merchant(String name, String code){
+			this.merchantCode = code;
+			this.merchantName = name;
+		}
+		
+		@Override
+		public String toString() {
+			return "merchantName : "+this.merchantName + " merchantCode : "+merchantCode;
+		}
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "category : "+this.category + " Merchant : "+merchant;
+	}
+
+}
+

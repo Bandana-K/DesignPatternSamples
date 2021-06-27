@@ -1,0 +1,28 @@
+package ChainOfResponsibilityPattern;
+
+public class Message {
+	
+	String category;
+	Merchant merchant;
+	
+	Message(String category, Merchant merchant){
+		this.category = category;
+		this.merchant = new Merchant(merchant.merchantName, merchant.merchantCode);
+		
+	}
+	
+	class Merchant{
+		
+		String merchantName;
+		
+		String merchantCode;
+		
+		Merchant(String name, String code){
+			this.merchantCode = code;
+			this.merchantName = name;
+		}
+		
+	}
+
+}
+

@@ -1,0 +1,13 @@
+package ChainOfResponsibilityPattern;
+
+public class CategoryValidator extends Validator{
+	
+	@Value("${deniedCategories}")
+
+	@Override
+	public void validate(Message message) {
+		
+		
+	}
+
+}
